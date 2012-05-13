@@ -16,9 +16,12 @@ task :style do
   linter.configuration.log_format = 
     '%{path}:%{linenumber}:%{check}:%{KIND}:%{message}'
 
-  File.read("#{MODULE_ROOT_DIR}/.puppet-lintrc").each_line do |line|
-    check = line.sub(/--no-([a-zA-Z0-9_]*)-check/, '\1').chomp
-    linter.configuration.send("disable_#{check}")
+  lintrc = "#{MODULE_ROOT_DIR}/.puppet-lintrc"
+  if File.file?(lintrc)
+    File.read(lintrc).each_line do |line|
+      check = line.sub(/--no-([a-zA-Z0-9_]*)-check/, '\1').chomp
+      linter.configuration.send("disable_#{check}")
+    end
   end
 
   FileList['**/*.pp'].each do |puppet_file|
