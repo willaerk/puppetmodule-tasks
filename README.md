@@ -21,7 +21,6 @@ The tasks should preferably be loaded from a top-level `Rakefile`:
 
 ```ruby
 require 'rubygems'
-require 'rake'
 
 task_dir = File.expand_path("../tasks", __FILE__)
 
@@ -40,24 +39,14 @@ Using the above `Rakefile`, you can just run `rake` to display the available tar
 
     bundle install
 
-Note there is no `puppet` gem included in the `Gemfile`, since a lot of people already have Puppet installed (using distribution packages). So you need to install Puppet yourself (gem or package). If you don't know how to do that, you shouldn't be here anyway :)
+**NOTE:** there is no `puppet` gem included in the `Gemfile`, since a lot of people already have Puppet installed (using distribution packages). So you will have to install Puppet separately (gem or package). If you don't know how to do that, you shouldn't be here anyway :)
 
 Copyright
 ---------
 
-Copyright (c) 2012 Kristof Willaert
+Copyright (C) 2012 Kristof Willaert
 
 License
 -------
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+Puppetmodule-tasks is licensed under the Apache License, Version 2.0. See the LICENSE file for more details.
