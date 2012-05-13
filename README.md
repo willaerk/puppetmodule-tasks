@@ -17,7 +17,7 @@ When you clone a project with a submodule in it, you need to run the following c
     git submodule init
     git submodule update
 
-The tasks should preferably be loaded from a top-level `Rakefile`:
+The tasks should preferably be loaded from a top-level `Rakefile`, usually in the module root directory:
 
 ```ruby
 require 'rubygems'
@@ -35,7 +35,7 @@ end
 Usage
 -----
 
-Using the above `Rakefile`, you can just run `rake` to display the available targets. Several of them require extra gems. There is a `Gemfile` included, which lists the necessary dependencies. To install these, just run the following from the submodule topdir (you need the `bundler` gem for this):
+Using the above `Rakefile`, you can just run `rake` from the module root directory to display the available targets. Several of them require extra gems. There is a `Gemfile` included, which lists the necessary dependencies. To install these, just run the following from the submodule topdir (you need the `bundler` gem for this):
 
     bundle install
 

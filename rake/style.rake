@@ -13,8 +13,8 @@ task :style do
   success = true
 
   linter = PuppetLint.new
-  #linter.configuration.log_format = 
-  #  '%{path}:%{linenumber}:%{check}:%{KIND}:%{message}'
+  linter.configuration.log_format = 
+    '%{path}:%{linenumber}:%{check}:%{KIND}:%{message}'
 
   FileList['**/*.pp'].each do |puppet_file|
     puts "Evaluating code style for #{puppet_file}"
