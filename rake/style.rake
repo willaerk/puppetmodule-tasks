@@ -13,8 +13,11 @@ task :style do
   success = true
 
   linter = PuppetLint.new
-  linter.configuration.log_format = 
-    '%{path}:%{linenumber}:%{check}:%{KIND}:%{message}'
+
+  if ENV['report'] == 'ci'
+    linter.configuration.log_format =
+      '%{path}:%{linenumber}:%{check}:%{KIND}:%{message}'
+  end
 
   lintrc = "#{MODULE_ROOT_DIR}/.puppet-lintrc"
   if File.file?(lintrc)
