@@ -17,7 +17,13 @@ RSpec::Core::RakeTask.new(:spec) do |t|
     format = "doc"
   end
 
+  if ENV['fail_on_error'] == 'false'
+    fail_on_error = false
+  else
+    fail_on_error = true
+  end
+
   t.rspec_opts = ["--format", "#{format}", "--color"]
-  t.fail_on_error = false
+  t.fail_on_error = fail_on_error
   t.pattern = 'spec/**/*_spec.rb'
 end
