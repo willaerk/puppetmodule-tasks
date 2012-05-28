@@ -12,7 +12,7 @@ task :syntax do
 
   success = true
 
-  FileList['**/*.pp'].each do |manifest|
+  FileList['{manifests,tests,examples}/**/*.pp'].each do |manifest|
     puts "Evaluating syntax for #{manifest}"
     begin
       Puppet::Face[:parser, '0.0.1'].validate(manifest) 

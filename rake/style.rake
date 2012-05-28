@@ -22,12 +22,12 @@ task :style do
   lintrc = "#{MODULE_ROOT_DIR}/.puppet-lintrc"
   if File.file?(lintrc)
     File.read(lintrc).each_line do |line|
-      check = line.sub(/--no-([a-zA-Z0-9_]*)-check/, '\1').chomp
+      check = line.sub(/--no-(.*)-check/, '\1').chomp
       linter.configuration.send("disable_#{check}")
     end
   end
 
-  FileList['**/*.pp'].each do |puppet_file|
+  FileList['{manifests,tests,examples}/**/*.pp'].each do |puppet_file|
     puts "Evaluating code style for #{puppet_file}"
     linter.file = puppet_file
     linter.run

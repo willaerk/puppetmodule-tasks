@@ -25,5 +25,5 @@ RSpec::Core::RakeTask.new(:spec) do |t|
 
   t.rspec_opts = ["--format", "#{format}", "--color"]
   t.fail_on_error = fail_on_error
-  t.pattern = 'spec/**/*_spec.rb'
+  t.pattern = 'spec/{classes,defines,functions,hosts}/**/*_spec.rb'
 end
