@@ -28,7 +28,7 @@ FileList["#{task_dir}/**/*.rake"].each { |fn| load fn }
 
 desc "Default task prints the available targets."
 task :default do
-  sh %{rake -T}
+  system("rake -T")
 end
 ```
 
@@ -44,7 +44,7 @@ Using the above `Rakefile`, you can just run `rake` from the module root directo
 Copyright
 ---------
 
-Copyright (C) 2012 Kristof Willaert
+Copyright (c) 2012 Kristof Willaert
 
 License
 -------
