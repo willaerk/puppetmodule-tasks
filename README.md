@@ -17,7 +17,7 @@ When you clone a project with a submodule in it, you need to run the following c
     git submodule init
     git submodule update
 
-The tasks should preferably be loaded from a top-level `Rakefile`, usually in the module root directory:
+The tasks should preferably be loaded from a top-level `Rakefile`, usually residing in the module root directory:
 
 ```ruby
 require 'rubygems'
