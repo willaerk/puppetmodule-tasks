@@ -1,7 +1,7 @@
 Puppet Module Rake Tasks
 ========================
 
-A collection of rake tasks to perform a number of standard procedures on puppet modules. In keeping with the [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself) principle, they were factored out of existing puppet modules into this repository.  
+A collection of rake tasks to perform a number of standard procedures on puppet modules. In keeping with the [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself) principle, they were factored out of existing puppet modules into this repository.
 
 Installation
 ------------
